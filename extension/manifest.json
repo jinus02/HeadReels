@@ -3,7 +3,6 @@
   "name": "HeadReels — 고개로 릴스 넘기기",
   "version": "0.1.0",
   "description": "웹캠으로 고개 자세를 인식해서 인스타그램 릴스를 손 안 대고 넘긴다. 위 보면 다음, 아래 보면 이전.",
-  "default_locale": "ko",
   "permissions": [
     "activeTab",
     "scripting",
@@ -25,10 +24,5 @@
   ],
   "background": {
     "service_worker": "background.js"
-  },
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
   }
 }
