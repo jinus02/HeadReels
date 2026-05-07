@@ -1,0 +1,154 @@
+:root {
+  color-scheme: dark;
+  --bg: #0e0f12;
+  --fg: #e8e8ea;
+  --muted: #9aa0a6;
+  --accent: #4f8cff;
+  --danger: #ff4f6e;
+  --ok: #36c98a;
+  --border: #2a2c33;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 360px;
+  margin: 0;
+  padding: 14px;
+  font: 13px/1.5 -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.hint {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 11.5px;
+}
+
+.cam {
+  position: relative;
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#cam, #overlay {
+  width: 100%;
+  display: block;
+}
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.status {
+  position: absolute;
+  bottom: 6px;
+  left: 8px;
+  font-size: 11px;
+  background: rgba(0,0,0,0.55);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+button {
+  flex: 1;
+  padding: 8px 10px;
+  background: var(--accent);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+button:hover { filter: brightness(1.1); }
+button:disabled { background: #333; color: #777; cursor: not-allowed; }
+
+.thresh {
+  margin-bottom: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.thresh label {
+  display: grid;
+  grid-template-columns: 110px 1fr 36px;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.thresh input[type=range] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+.thresh span {
+  text-align: right;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.manual {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+.manual .label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.manual {
+  display: grid;
+  gap: 6px;
+}
+.manual button {
+  background: #2a2c33;
+  color: var(--fg);
+}
+
+.log {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.log .label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  color: var(--muted);
+}
+#events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  max-height: 90px;
+  overflow-y: auto;
+  font-family: ui-monospace, "Consolas", monospace;
+}
+#events li {
+  padding: 2px 4px;
+  color: var(--muted);
+  border-bottom: 1px solid #1a1c20;
+}
+#events li.up { color: var(--ok); }
+#events li.down { color: var(--accent); }
+#events li.err { color: var(--danger); }
